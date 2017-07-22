@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Login</title>
@@ -31,7 +32,7 @@
         height: 30px;
         border-radius: 5px;
         }
-        img {
+        .img {
         position: absolute;
         top: 20px;
         left: 200px;
@@ -55,13 +56,11 @@
         top: 520px;
         left: 984px;
         }
-        @media(max-width: 500px) {
-            h1{
-            font-size: 50px;
-            margin-top: 20px;
-            line-height: 40px;
-            }
-
+        .eye {
+        position: absolute;
+        top:339px;
+        left: 1200px;
+        }
 </style>
 <body>
 <h1>Instaclone</h1>
@@ -74,7 +73,12 @@
         <input type="submit" value="Enter">
     </form>
 </div>
-<img src="http://i.imgur.com/EpOd8Ja.jpg">
+<div class="img"><img src="http://i.imgur.com/EpOd8Ja.jpg"></div>
+<div class="eye">
+    <button type="button" id="eye" onclick="if(password.type=='text')password.type='password'; else if(password.type='password')password.type='text';">
+    <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png">
+    </button>
+</div>
 <p><b>It's time to go SOCIAL. Enter into the World of IMAGES and VIDEOS</b></p>
 <div class="bakchodi">Don't have an account? <a href="/">Signup</a></div>
 </body>
