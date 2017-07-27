@@ -79,7 +79,7 @@
     </form>
 
 <div class="kuch">
-    Already a member? <a href="login/">Log in</a>
+    Already a member? <a href="/login/">Log in</a>
 </div>
 <div class="kuch1"><b>Signup to see photos and videos of your friends</b></div>
 <div class="img">
@@ -91,5 +91,8 @@
     <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png">
     </button>
 </div>
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+{% endfor %}
 </body>
 </html>
