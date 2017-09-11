@@ -8,8 +8,6 @@ from models import User, SessionToken, PostModel, Like, Comment
 from django.contrib.auth.hashers import make_password, check_password
 from instaClone.settings import BASE_DIR
 from imgurpython import ImgurClient
-from clarifai import rest
-from clarifai.rest import ClarifaiApp
 
 def signup_view(request):
     if request.method == "POST":
@@ -139,3 +137,11 @@ def comment_view(request):
             return redirect('/feed/')
     else:
         return redirect('/login')
+
+def logout_view(request):
+    user = check_validation(request)
+    if user:
+        token=SessionToken.objects.get(session_token=request.COOKIES.get("session_token"))
+        token.is_valid=False
+        token.save()
+    return redirect('/login')
